@@ -1,5 +1,5 @@
 
-![Color logo with background](https://github.com/remdis/remdis-beta/assets/78123059/e74a1d49-c700-4891-9717-79374cc35c82)
+![Color logo with background](https://github.com/remdis/remdis/assets/15374299/da5eb1c0-b3b4-4056-9c68-99448265e9a4)
 
 # Remdis: Realtime Multimodal Dialogue System Toolkit
 Remdisはテキスト・音声・マルチモーダル対話システム開発のためのプラットフォームです。
