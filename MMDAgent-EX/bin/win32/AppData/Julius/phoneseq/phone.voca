@@ -1,0 +1,42 @@
+%PHONES
+a	a
+i	i
+i:	i:
+u	u
+u:	u:
+e	e
+e:	e:
+o	o
+o:	o:
+k	k
+g	g
+ky	ky
+gy	gy
+s	s
+z	z
+j	j
+sh	sh
+t	t
+ch	ch
+ts	ts
+n	n
+ny	ny
+h	h
+hy	hy
+f	f
+m	m
+my	my
+y	y
+r	r
+ry	ry
+w	w
+N	N
+
+%NOISE
+sp	sp
+	
+%NO_B	
+silB	silB
+	
+%NO_E	
+silE	silE

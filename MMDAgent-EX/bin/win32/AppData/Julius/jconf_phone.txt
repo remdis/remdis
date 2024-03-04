@@ -1,0 +1,14 @@
+-gram phoneseq/phone
+-h phoneseq/super_mono128.binhmm
+-zmeanframe
+-b           0
+-1pass
+-progout
+-proginterval 30
+-input       mic
+-lv          120
+-headmargin  250
+-tailmargin  450
+-rejectshort 700
+-rejectlong  4000
+-nostrip

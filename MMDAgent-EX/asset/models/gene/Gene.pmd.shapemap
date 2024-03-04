@@ -1,0 +1,165 @@
+#### パラメータ
+## 目の回転量の係数。小さいほど目の回転量が小さくなる
+## PMDモデルではモデルごとに目の回転量が異なるのでこの値で調整
+EYE_ROTATION_COEF 0.4
+
+#### リップシンク用モーフ名
+LIP_A あ
+LIP_I い
+LIP_U う
+LIP_O お
+
+#### リップシンク中に０にリセットするモーフ名のリスト
+#### 上記で指定した以外の、口を開けるモーフを全て指定する
+NOLIP え,おお~,ワ,∧,はんっ！,えー,にやり,にっこり,口締め,結び,む,ああ,いい,にたり,叫び,あーれー,口わらい,mouth_a_geo_C,mouth_i_geo_C,mouth_u_geo_C,mouth_e_geo_C,mouth_o_geo_C,mouth_oh_geo_C,mouth_smile_geo_C,mouth_surprise_geo
+
+#### トラッキング設定
+## 頭と視線のトラッキング（__AV_TRACK）で制御するボーン名
+## 複数指定した場合、左から順にモデル上を探して見つかったものを使う
+TRACK_HEAD 頭
+TRACK_NECK 首
+TRACK_LEFTEYE 左目
+TRACK_RIGHTEYE 右目
+TRACK_BOTHEYE 両目
+TRACK_BODY 上半身2,上半身２,上半身1,上半身
+TRACK_CENTER センター
+
+## __AV_AU 用の Action Unit 番号に対応するモーフ名。AU使用時に指定
+## AU情報はregressionのみ使う 値域は[0..5.0]だが 1.0以上の値は 1 にまるめる
+##  モーフ名 のみの場合、値をそのまま重みにマッピング
+##  モーフ名 >閾値 の場合、値 < 閾値 なら 0.0,値 >= 閾値なら 1.0
+##  モーフ名 係数 の場合、値に係数倍したものを重みにマッピング（係数はゼロ以上、負はNG）
+##  モーフが複数のAUに対応付けられている場合は加算される
+##  一つの AU で複数のモーフを動かす場合、対象モーフごとに指定する
+##  ここに書かれていないAUは無視される
+AU6 笑い >0.7
+AU1 上 0.5
+AU2 上 0.5
+AU4 困る
+AU5 見開き
+AU12 にこり
+AU45 まばたき
+## モーフ調律集合：左から優先で重みが合計1になるよう事後調整
+## 複数定義可能（最大30個）。1つあたり10種まで。
+MORPH_TUNE 笑い まばたき
+
+## __AV_ARKIT用の ARKit シェイプ名に対応するモーフ名。ARKit 使用時に指定
+##  モーフ名 のみの場合、値をそのまま重みにマッピング
+##  モーフ名 >閾値 の場合、値 < 閾値 なら 0.0,値 >= 閾値なら 1.0
+##  モーフ名 係数 xの場合、値に係数倍したものを重みにマッピング（係数はゼロ以上、負はNG）
+##  モーフが複数のシェイプに対応付けられている場合は加算される
+##  1つのシェイプで複数のモーフを動かす場合、対象モーフごとに指定する
+##  ここに書かれていないシェイプは無視される
+
+
+#### プリセットモーション指定。プリセットアクション使用時に設定
+## __AV_ACTION に対応するモーションファイル名を指定
+ACT0  motion/00_normal.vmd
+ACT1  motion/01_happy.vmd
+ACT2  motion/02_laugh.vmd
+ACT3  motion/03_smile.vmd
+ACT4  motion/04_littlesmile.vmd
+ACT5  motion/05_gracefulsmile.vmd
+ACT6  motion/06_embarassedsmile.vmd
+ACT7  motion/07_annoyedsmile.vmd
+ACT8  motion/08_surprise.vmd
+ACT9  motion/09_unexpected.vmd
+ACT10 motion/10_impressed.vmd
+ACT11 motion/11_admiration.vmd
+ACT12 motion/12_expectant.vmd
+ACT13 motion/13_convinced.vmd
+ACT14 motion/14_crisp.vmd
+ACT15 motion/15_proud.vmd
+ACT16 motion/16_thinking.vmd
+ACT17 motion/17_nothankyou.vmd
+ACT18 motion/18_compassion.vmd
+ACT19 motion/19_triumphant.vmd
+ACT20 motion/20_introuble.vmd
+ACT21 motion/21_disgust.vmd
+ACT22 motion/22_apology.vmd
+ACT23 motion/23_stressed.vmd
+ACT24 motion/24_embarrasing.vmd
+ACT25 motion/25_sharpeyessuspicion.vmd
+ACT26 motion/26_mortifying.vmd
+ACT27 motion/27_provoking.vmd
+ACT28 motion/28_sleepy.vmd
+ACT29 motion/29_Terrified.vmd
+ACT30 motion/30_stunned.vmd
+ACT31 motion/31_disappointed.vmd
+ACT32 motion/32_frustrated.vmd
+ACT33 motion/33_angry.vmd
+ACT34 motion/34_sad.vmd
+ACT35 motion/35_Afraid.vmd
+ACT36 motion/36_Anxious.vmd
+ACT37 motion/37_Sentimental.vmd
+ACT38 motion/38_Ashamed.vmd
+
+#### 個別制御の設定 それぞれ利用する場合に設定
+## __AV_EXBONE で使用される name に対応するボーン名
+## ボーンの記述方法は TRACK と同じ
+#EXBONE_name ボーン名
+
+## __AV_EXMORPH で使用される name に対応するフェイス名
+## モーフの記述方法は AU や ARKIT と同じ
+#EXMORPH_name モーフ名
+
+browDown_L browDownLeft 
+browDown_R browDownRight 
+browInnerUp browInnerUp 
+browOuterUp_L browOuterUpLeft 
+browOuterUp_R browOuterUpRight 
+
+cheekPuff cheekPuff 
+cheekSquint_L cheekSquintLeft 
+cheekSquint_R cheekSquintRight 
+
+eyeBlink_R eyeBlinkRight 
+eyeBlink_L eyeBlinkLeft 
+eyeLookDown_L eyeLookDownLeft 
+eyeLookDown_R eyeLookDownRight 
+eyeLookIn_L eyeLookInLeft 
+eyeLookIn_R eyeLookInRight 
+eyeLookOut_L eyeLookOutLeft 
+eyeLookOut_R eyeLookOutRight 
+eyeLookUp_L eyeLookUpLeft 
+eyeLookUp_R eyeLookUpRight 
+eyeSquint_L eyeSquintLeft 
+eyeSquint_R eyeSquintRight 
+eyeWide_L eyeWideLeft 
+eyeWide_R eyeWideRight 
+
+# hapihapi
+
+jawForward jawForward 
+jawLeft jawLeft 
+jawOpen jawOpen 
+jawRight jawRight 
+
+mouthClose mouthClose 
+mouthDimple_L mouthDimpleLeft 
+mouthDimple_R mouthDimpleRight 
+mouthFrown_L mouthFrownLeft 
+mouthFrown_R mouthFrownRight 
+mouthFunnel mouthFunnel 
+mouthLeft mouthLeft 
+mouthLowerDown_L mouthLowerDownLeft 
+mouthLowerDown_R mouthLowerDownRight 
+mouthPress_L mouthPressLeft 
+mouthPress_R mouthPressRight 
+mouthPucker mouthPucker 
+mouthRight mouthRight 
+mouthRollLower mouthRollLower 
+mouthRollUpper mouthRollUpper 
+mouthShrugLower mouthShrugLower 
+mouthShrugUpper mouthShrugUpper 
+mouthSmile_L mouthSmileLeft 
+mouthSmile_R mouthSmileRight 
+mouthStretch_L mouthStretchLeft 
+mouthStretch_R mouthStretchRight 
+mouthUpperUp_L mouthUpperUpLeft 
+mouthUpperUp_R mouthUpperUpRight 
+
+noseSneer_L noseSneerLeft 
+noseSneer_R noseSneerRight 
+
+tongueOut tongueOut 

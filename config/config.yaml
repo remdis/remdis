@@ -1,0 +1,59 @@
+AIN:
+ frame_length: 0.005 # sec
+ sample_rate: 16000 # Hz
+ sample_width: 2 # Bytes
+ num_channel: 1
+
+ASR:
+ buff_size: 10
+ json_key: <enter your json path>
+ language: ja-JP
+ chunk_size: 20
+ sample_rate: 16000 # Hz
+
+VAP:
+ model_filename: ../models/vap/sw2japanese_public0.ckpt
+ buffer_length: 25 # ms
+ threshold: 0.5
+
+DIALOGUE:
+ history_length: 5
+ response_generation_timeout: 3.0 # sec
+ response_generation_interval: 3
+ max_silence_time: 5.0 # sec
+
+ChatGPT:
+ api_key: <enter your API key>
+ max_tokens: 128
+ max_message_num_in_context: 4
+ response_generation_model: "gpt-3.5-turbo" # "gpt-4-1106-preview"
+ text_vap_model: "gpt-3.5-turbo"
+ prompts:
+  BC: prompt/text_vap.txt
+  RESP: prompt/response.txt
+  TO: prompt/time_out.txt
+
+TEXT_VAP:
+ max_verbal_backchannel_num: 2
+ max_nonverbal_backchannel_num: 1
+ min_text_vap_threshold: 6
+ text_vap_interval: 3
+
+TIME_OUT:
+ max_silence_time: 5 # sec
+ max_timeout_num: 3
+ block_time: 10 # sec
+
+TTS:
+ engine_name: ttslearn # ttslearn or openjtalk
+ model_name: tacotron2_hifipwg_jsut24k # ttslearnのモデル名
+ frame_length: 0.05 # Sec
+ send_interval: 0.04 # Sec
+ sample_rate: 16000 # Hz
+ sample_width: 2 # Bytes
+
+AOUT:
+ frame_length: 0.05 # Sec
+ sample_rate: 16000 # Hz
+ sample_width: 2 # Bytes
+ num_channel: 1

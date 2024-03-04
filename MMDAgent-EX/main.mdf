@@ -1,0 +1,15 @@
+#
+# MMDAgent-EX content configuration
+#
+#   see Docuemnts/40_mdf.md for details
+#
+
+# enable only required plugins and disable others
+disablePlugin=ALL
+enablePlugin=AnyScript,Audio,Remote,TextArea,Variables,VIManager,RabbitMQ
+
+# other settings for agent rendering
+display_comment_time=0.0
+bullet_fps=60
+
+Plugin_RabbitMQ_ConfigFile=rabbitmq_config.json

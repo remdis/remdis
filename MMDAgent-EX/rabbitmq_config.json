@@ -1,0 +1,50 @@
+{
+   "host" : "localhost",
+   "port" : 5672,
+   "user" : "guest",
+   "pass" : "guest",
+   "audio_mode" : "streaming",
+   "connection_list" : [
+      {
+         "name" : "tts",
+         "type" : "fanout",
+         "mode" : "consumer",
+         "exchange" : "tts",
+         "bindingkey" : ""
+      },
+      {
+         "name" : "dialogue2",
+         "type" : "fanout",
+         "mode" : "consumer",
+         "exchange" : "dialogue2",
+         "bindingkey" : ""
+      }
+   ],
+   "target_model_alias": "0",
+   "motion_expression_alias": "expression",
+   "motion_action_alias": "action",
+   "expression_list" : [
+      {"name" : "normal",         "motion" : "asset/models/uka/motion/00_normal.vmd"},
+      {"name" : "joy",            "motion" : "asset/models/uka/motion/03_smile.vmd"},
+      {"name" : "impressed",      "motion" : "asset/models/uka/motion/10_impressed.vmd"},
+      {"name" : "convinced",      "motion" : "asset/models/uka/motion/13_convinced.vmd"},
+      {"name" : "thinking",       "motion" : "asset/models/uka/motion/16_thinking.vmd"},
+      {"name" : "sleepy",         "motion" : "asset/models/uka/motion/28_sleepy.vmd"},
+      {"name" : "suspicion",      "motion" : "asset/models/uka/motion/25_sharpeyessuspicion.vmd"},
+      {"name" : "compassion",     "motion" : "asset/models/uka/motion/18_compassion.vmd"},
+      {"name" : "embarrassing",   "motion" : "asset/models/uka/motion/24_embarrasing.vmd"},
+      {"name" : "anger",          "motion" : "asset/models/uka/motion/33_angry.vmd"}
+   ],
+   "action_list" : [
+      {"name" : "wait",           "motion" : "asset/base/wait.vmd"},
+      {"name" : "listening",      "motion" : "asset/actions/listen.vmd"},
+      {"name" : "nod",            "motion" : "asset/actions/nod.vmd"},
+      {"name" : "head_tilt",      "motion" : "asset/actions/looking_right.vmd"},
+      {"name" : "thinking",       "motion" : "asset/actions/thinking.vmd"},
+      {"name" : "light_greeting", "motion" : "asset/actions/eshaku.vmd"},
+      {"name" : "greeting",       "motion" : "asset/actions/ojigi.vmd"},
+      {"name" : "wavehand",       "motion" : "asset/actions/wavehand.vmd"},
+      {"name" : "wavehands",      "motion" : "asset/actions/wavehands.vmd"},
+      {"name" : "lookaround",     "motion" : "asset/actions/lookaround.vmd"}
+   ]
+}
