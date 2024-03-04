@@ -280,7 +280,7 @@ Remdisでは、音声認識に[Google Cloud Speech-to-Text API](https://cloud.go
 @inproceedings{remdis2023slud,
   title={Remdis: リアルタイムマルチモーダル対話システム構築ツールキット},
   author={千葉祐弥 and 光田航 and 李晃伸 and 東中竜一郎},
-  booktitle={人工知能学会研究会資料},
+  booktitle={人工知能学会 言語・音声理解と対話処理研究会（第99回）},
   pages={25--30},
   year={2023},
 }
@@ -290,8 +290,8 @@ Remdisでは、音声認識に[Google Cloud Speech-to-Text API](https://cloud.go
 @inproceedings{vap-sato2024slud,
   title={複数の日本語データセットによる音声活動予測モデルの学習とその評価},
   author={佐藤友紀 and 千葉祐弥 and 東中竜一郎},
-  booktitle={YYYY},
-  pages={XX--XX},
+  booktitle={人工知能学会 言語・音声理解と対話処理研究会（第100回）},
+  pages={192--197},
   year={2024},
 }
 ~~~
