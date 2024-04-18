@@ -121,7 +121,7 @@ class RemdisModule:
 
     # YAML形式の設定ファイル読み込み関数
     def load_config(self, config_filename):
-        with open(config_filename) as f:
+        with open(config_filename, encoding='utf-8') as f:
             config = yaml.safe_load(f)
         return config
 
