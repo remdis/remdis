@@ -196,11 +196,11 @@ RemdisではRabbitMQの実行にDockerを利用します。Audio VAPでGPUを利
 
 ## TIPS
 ### マイクとスピーカーが正しく接続されているか確認したい
-- chk_mik_spk.pyを実行
+- chk_mic_spk.pyを実行
   ~~~
   # 自分の発話がフィードバックされて聴こえていればOK
   python input.py
-  python chk_mik_spk.py
+  python chk_mic_spk.py
   python output.py
   ~~~
 

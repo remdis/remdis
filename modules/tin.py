@@ -1,4 +1,3 @@
-import readline
 from base import RemdisModule, RemdisUpdateType
 
 class TIN(RemdisModule):
