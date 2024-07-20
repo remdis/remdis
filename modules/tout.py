@@ -28,24 +28,24 @@ class TOUT(RemdisModule):
     def callback_asr(self, ch, method, properties, in_msg):
         in_msg = self.parse_msg(in_msg)
         print('IN(asr):', end='')
-        self.printIU(in_msg)
+        self.printIU(in_msg, flush=True)
     
     def callback_dialogue(self, ch, method, properties, in_msg):
         in_msg = self.parse_msg(in_msg)
         time.sleep(1)
         print('IN(dialogue):', end='')
-        self.printIU(in_msg)
+        self.printIU(in_msg, flush=True)
         if in_msg['update_type'] == RemdisUpdateType.COMMIT:
             snd_iu = self.createIU('', 'tts', RemdisUpdateType.COMMIT)
             snd_iu['data_type'] = 'audio'
             print('OUT(tts): ', end='')
-            self.printIU(snd_iu)
+            self.printIU(snd_iu, flush=True)
             self.publish(snd_iu, 'tts')
 
     def callback_dialogue2(self, ch, method, properties, in_msg):
         in_msg = self.parse_msg(in_msg)
         print('IN(dialogue2):', end='')
-        self.printIU(in_msg)
+        self.printIU(in_msg, flush=True)
 
 if __name__ == '__main__':
     TOUT().run()

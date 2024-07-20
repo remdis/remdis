@@ -114,11 +114,12 @@ class RemdisModule:
         return iu
 
     # 汎用IUプリント関数
-    def printIU(self, iu):
+    def printIU(self, iu, flush=False):
         sys.stdout.write('[%s] Body: %s, Update_type: %s, ID: %s\n'
                          % (iu['timestamp'], iu['body'],
                             iu['update_type'], iu['id']))
-        sys.stdout.flush()
+        if flush:
+            sys.stdout.flush()
 
     # YAML形式の設定ファイル読み込み関数
     def load_config(self, config_filename):
