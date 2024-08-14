@@ -165,7 +165,7 @@ class TextVAP(RemdisModule):
                     continue
 
                 # 相槌を打つかどうかの判定
-                if current_completion_line.startswith('a'):
+                if current_completion_line.startswith(('a', '==a')):
                     label, content = self.parse_line_for_backchannel(current_completion_line)
                     if label:
                         self.log(f"***** BACKCHANNEL: {query=} {content=} *****")
