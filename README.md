@@ -1,4 +1,4 @@
-
+![image](https://github.com/user-attachments/assets/361b3e78-608c-423b-a4a7-e0b2f3e4c6f0)
 ![Color logo with background](https://github.com/remdis/remdis/assets/15374299/da5eb1c0-b3b4-4056-9c68-99448265e9a4)
 
 # Remdis: Realtime Multimodal Dialogue System Toolkit
@@ -32,6 +32,7 @@ This page provides the necessary information for using Remdis.
 ---------------------------------------
 
 ## 更新履歴
+- 2025/06/03 活用事例を追加
 - 2024/10/04 英語の説明を追加
 - 2024/07/11 書籍情報を追記
 - 2024/04/18 Windowsでconfig.yamlを開くときにエラーが出る問題を修正
@@ -169,7 +170,7 @@ RemdisではRabbitMQの実行にDockerを利用します。Audio VAPでGPUを利
   ~~~
   conda activate remdis
   ~~~
-- 6つのIMを起動 (**システム発話が音声認識されないよう，ヘッドセットでの利用を推奨**)
+- 6つのIMを起動 (**システム発話が音声認識されないよう、ヘッドセットでの利用を推奨**)
   ~~~
   # 初回のみTTSでモデルの読み込みが入ります
   # audio_vap.pyまたはtext_vap.pyを動かさない場合は、ASR終端とTTS終端がターンの交代に用いられます
@@ -191,7 +192,7 @@ RemdisではRabbitMQの実行にDockerを利用します。Audio VAPでGPUを利
   ~~~
   conda activate remdis
   ~~~
-- 5つのIMを起動　(**システム発話が音声認識されないよう，ヘッドセットでの利用を推奨**)
+- 5つのIMを起動　(**システム発話が音声認識されないよう、ヘッドセットでの利用を推奨**)
   ~~~
   python input.py
   python audio_vap.py or text_vap.py
@@ -246,8 +247,8 @@ RemdisではRabbitMQの実行にDockerを利用します。Audio VAPでGPUを利
 
 ## ライセンス
 ### ソースコードの利用規約
-このレポジトリに含まれるオリジナルのファイルのライセンスは，models/vap以下に含まれる学習済みのVAPモデルを除き，Apache License 2.0です。商用・非商用問わずに、お使いいただけます。 
-MMDAgent-EXに付属のCGアバターのライセンスについては MMDAgent-EX/asset/models/README-ja.txtをお読みください．
+このレポジトリに含まれるオリジナルのファイルのライセンスは、models/vap以下に含まれる学習済みのVAPモデルを除き、Apache License 2.0です。商用・非商用問わずに、お使いいただけます。 
+MMDAgent-EXに付属のCGアバターのライセンスについては MMDAgent-EX/asset/models/README-ja.txtをお読みください。
 加えて，他のライセンスがすでに付与されているファイルはそのライセンスにも注意を払って利用してください。
 
 ~~~
@@ -266,7 +267,7 @@ Copyright 2024 Ryuichiro Higashinaka, Koh Mitsuda, Yuya Chiba, Akinobu Lee
 ~~~
 
 ### 学習済みVAPモデルの利用規約
-Audio VAPのモデルは下記の対話データを用いて学習されています．
+Audio VAPのモデルは下記の対話データを用いて学習されています。
 - [Switchboard-1 Release 2](https://catalog.ldc.upenn.edu/LDC97S62)
 - [CALLHOME Japanese Speech](https://catalog.ldc.upenn.edu/LDC96S37)
 - 旅行案内対話コーパス [稲葉+, 2021]
@@ -313,6 +314,13 @@ Remdisでは、音声認識に[Google Cloud Speech-to-Text API](https://cloud.go
 }
 ~~~
 ---------------------------------------
+
+## 活用事例
+こちらでは、Remdisの活用事例をご紹介しています。
+- [対話システムライブコンペティション7](https://sites.google.com/view/dslc7/%E3%83%9B%E3%83%BC%E3%83%A0)
+- [マルチモーダルVR対話エージェント VRAIM (山形大学 小坂研究室)](https://github.com/kosakakenTaiwa/VRAIM)
+
+※Remdisを利用した公開プロジェクト等でリンクの掲載希望がありましたらご一報ください。随時掲載いたします。
 
 ## 謝辞
 本成果物は、JSTムーンショット型研究開発事業目標１「アバター共生社会プロジェクト」JPMJMS2011の支援を受けています。
