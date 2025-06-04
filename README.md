@@ -316,7 +316,7 @@ Remdisでは、音声認識に[Google Cloud Speech-to-Text API](https://cloud.go
 ---------------------------------------
 
 ## 活用事例
-こちらでは、Remdisの活用事例をご紹介しています。
+Remdisの活用事例のリンク集です。
 - [対話システムライブコンペティション7](https://sites.google.com/view/dslc7/%E3%83%9B%E3%83%BC%E3%83%A0)
 - [マルチモーダルVR対話エージェント VRAIM (山形大学 小坂研究室)](https://github.com/kosakakenTaiwa/VRAIM)
 
