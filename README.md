@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/361b3e78-608c-423b-a4a7-e0b2f3e4c6f0)
 ![Color logo with background](https://github.com/remdis/remdis/assets/15374299/da5eb1c0-b3b4-4056-9c68-99448265e9a4)
 
 # Remdis: Realtime Multimodal Dialogue System Toolkit
