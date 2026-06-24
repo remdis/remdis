@@ -10,7 +10,7 @@ from base import MMDAgentEXLabel
 
 
 class ResponseGenerator:
-    def __init__(self, config, asr_timestamp, query, dialogue_history, prompts):
+    def __init__(self, config, asr_timestamp, query, dialogue_history, prompts, client):
         # 設定の読み込み
         self.max_tokens = config['ChatGPT']['max_tokens']
         self.max_message_num_in_context = config['ChatGPT']['max_message_num_in_context']
@@ -49,7 +49,7 @@ class ResponseGenerator:
         self.log(f"Call ChatGPT: {query=}")
 
         # ChatGPTに対話文脈を入力してストリーミング形式で応答の生成を開始
-        self.response = openai.ChatCompletion.create(
+        self.response = client.chat.completions.create(
             model=self.model,
             messages=messages,
             max_tokens=self.max_tokens,
@@ -82,10 +82,13 @@ class ResponseGenerator:
 
         # ChatGPTの応答を順次パースして返す
         for chunk in self.response:
-            chunk_message = chunk['choices'][0]['delta']
+            chunk_message = chunk.choices[0].delta
 
-            if 'content' in chunk_message.keys():
-                new_token = chunk_message.get('content')
+            if hasattr(chunk_message, 'content'):
+                new_token = chunk_message.content
+
+                if not new_token:
+                    continue
 
                 # 応答の断片を追加
                 if new_token != "/":
@@ -129,7 +132,7 @@ class ResponseChatGPT():
         self.prompts = prompts
 
         # 設定の読み込み
-        openai.api_key = config['ChatGPT']['api_key']
+        self.client = openai.OpenAI(api_key=config['ChatGPT']['api_key'])
 
         # 入力されたユーザ発話に関する情報を保持する変数
         self.user_utterance = ''
@@ -144,14 +147,15 @@ class ResponseChatGPT():
         self.asr_time = asr_timestamp
 
         # ChataGPTを呼び出して応答の生成を開始
-        self.response = ResponseGenerator(self.config, asr_timestamp, user_utterance, dialogue_history, self.prompts)
+        self.response = ResponseGenerator(self.config, asr_timestamp, user_utterance, dialogue_history, self.prompts,
+                                          self.client)
 
         # 自身をDialogueモジュールが持つLLMバッファに追加
         parent_llm_buffer.put(self)
 
 
 if __name__ == "__main__":
-    openai.api_key = '<enter your API key>'
+    client = openai.OpenAI(api_key='<enter your API key>')
 
     config = {'ChatGPT': {
         'max_tokens': 64,
@@ -164,10 +168,11 @@ if __name__ == "__main__":
     dialogue_history = []
     prompts = {}
 
-    with open('./prompt/response.txt') as f:
+    with open('./prompt/response.txt', encoding='utf-8') as f:
         prompts['RESP'] = f.read()
 
-    response_generator = ResponseGenerator(config, asr_timestamp, query, dialogue_history, prompts)
+    response_generator = ResponseGenerator(config, asr_timestamp, query,
+                                           dialogue_history, prompts, client)
 
     for part in response_generator:
         response_generator.log(part)

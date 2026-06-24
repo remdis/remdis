@@ -52,7 +52,7 @@ nnmnkwii==0.1.3
 numba==0.59.0
 numpy==1.26.4
 omegaconf==2.3.0
-openai==0.28.0
+openai==1.12.0
 packaging==23.2
 parallel-wavegan==0.6.1
 pika==1.3.2
